@@ -1,0 +1,37 @@
+name: Generate OTA JSON
+
+# 這個腳本什麼時候會執行？
+# 當你發佈新的 Release，或者修改現有 Release 時
+on:
+  release:
+    types: [published, edited]
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允許機器人寫入程式碼
+
+    steps:
+      # 1. 抓取 gh-pages 分支的內容
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      # 2. 呼叫 GitHub API 並存成 releases.json
+      - name: Fetch API and save to file
+        run: |
+          # 這裡使用 Action 內建的機器人 Token，權限最高且不會受限
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+               -H "Accept: application/vnd.github.v3+json" \
+               https://api.github.com/repos/${{ github.repository }}/releases > releases.json
+
+      # 3. 將新的 JSON 提交並推送到 gh-pages 分支
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add releases.json
+          git commit -m "自動更新 OTA releases.json" || echo "沒有變更需要提交"
+          git push origin gh-pages
