@@ -1,11 +1,11 @@
 name: Generate OTA JSON
 
 # 這個腳本什麼時候會執行？
-# 當你發佈新的 Release，或者修改現有 Release 時
+# 當你創建、發佈、編輯、刪除、取消發佈或設定預發佈 Release 時都會自動觸發
 on:
   release:
-    types: [published, edited]
-  workflow_dispatch:  # <--- 就是這行！代表允許手動在網頁上點擊執行
+    types: [published, edited, created, deleted, unpublished, prereleased]
+  workflow_dispatch:  # 允許手動在網頁上點擊執行
   
 jobs:
   update-json:
@@ -23,7 +23,7 @@ jobs:
       # 2. 呼叫 GitHub API 並存成 releases.json
       - name: Fetch API and save to file
         run: |
-          # 這裡使用 Action 內建的機器人 Token，權限最高且不會受限
+          # 這裡使用 Action 內建的機器人 Token 獲取最新列表
           curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
                -H "Accept: application/vnd.github.v3+json" \
                https://api.github.com/repos/${{ github.repository }}/releases > releases.json
@@ -34,5 +34,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add releases.json
+          # 如果內容完全沒變，commit 會報錯，所以用 || echo 來避免 Action 失敗
           git commit -m "自動更新 OTA releases.json" || echo "沒有變更需要提交"
           git push origin gh-pages
