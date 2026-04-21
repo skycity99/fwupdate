@@ -1,5 +1,49 @@
 [
   {
+    "url": "https://api.github.com/repos/skycity99/fwupdate/releases/311495393",
+    "assets_url": "https://api.github.com/repos/skycity99/fwupdate/releases/311495393/assets",
+    "upload_url": "https://uploads.github.com/repos/skycity99/fwupdate/releases/311495393/assets{?name,label}",
+    "html_url": "https://github.com/skycity99/fwupdate/releases/tag/test_ff1",
+    "id": 311495393,
+    "author": {
+      "login": "skycity99",
+      "id": 41987653,
+      "node_id": "MDQ6VXNlcjQxOTg3NjUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41987653?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/skycity99",
+      "html_url": "https://github.com/skycity99",
+      "followers_url": "https://api.github.com/users/skycity99/followers",
+      "following_url": "https://api.github.com/users/skycity99/following{/other_user}",
+      "gists_url": "https://api.github.com/users/skycity99/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/skycity99/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/skycity99/subscriptions",
+      "organizations_url": "https://api.github.com/users/skycity99/orgs",
+      "repos_url": "https://api.github.com/users/skycity99/repos",
+      "events_url": "https://api.github.com/users/skycity99/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/skycity99/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "node_id": "RE_kwDOSE3Z_c4SkQrh",
+    "tag_name": "test_ff1",
+    "target_commitish": "main",
+    "name": "test fw",
+    "draft": false,
+    "immutable": false,
+    "prerelease": false,
+    "created_at": "2026-04-21T02:07:18Z",
+    "updated_at": "2026-04-21T02:16:52Z",
+    "published_at": "2026-04-21T02:16:52Z",
+    "assets": [
+
+    ],
+    "tarball_url": "https://api.github.com/repos/skycity99/fwupdate/tarball/test_ff1",
+    "zipball_url": "https://api.github.com/repos/skycity99/fwupdate/zipball/test_ff1",
+    "body": "test fw"
+  },
+  {
     "url": "https://api.github.com/repos/skycity99/fwupdate/releases/310142901",
     "assets_url": "https://api.github.com/repos/skycity99/fwupdate/releases/310142901/assets",
     "upload_url": "https://uploads.github.com/repos/skycity99/fwupdate/releases/310142901/assets{?name,label}",
@@ -29,12 +73,12 @@
     "node_id": "RE_kwDOSE3Z_c4SfGe1",
     "tag_name": "TW-AISSENS_100AW6K-1.1.9-Beta3.bin",
     "target_commitish": "main",
-    "name": "fw_1",
+    "name": "fw_1.1.9",
     "draft": false,
     "immutable": false,
     "prerelease": false,
     "created_at": "2026-04-17T02:23:04Z",
-    "updated_at": "2026-04-17T02:28:26Z",
+    "updated_at": "2026-04-21T02:13:42Z",
     "published_at": "2026-04-17T02:28:26Z",
     "assets": [
       {
@@ -76,7 +120,7 @@
     ],
     "tarball_url": "https://api.github.com/repos/skycity99/fwupdate/tarball/TW-AISSENS_100AW6K-1.1.9-Beta3.bin",
     "zipball_url": "https://api.github.com/repos/skycity99/fwupdate/zipball/TW-AISSENS_100AW6K-1.1.9-Beta3.bin",
-    "body": "TW-AISSENS_100AW6K-1.1.9-Beta3.bin"
+    "body": "TW-AISSENS_100AW6K-1.1.9-Beta3.bin\r\nfw_1.1.9"
   },
   {
     "url": "https://api.github.com/repos/skycity99/fwupdate/releases/311100000",
